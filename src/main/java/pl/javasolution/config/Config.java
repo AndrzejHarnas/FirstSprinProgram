@@ -11,8 +11,8 @@ import pl.javasolution.implementation.Order;
 
 @Configuration
 public class Config {
-    @Bean
-    public IPizza pizza(){
+  /*  @Bean
+   public IPizza pizza(){
 
  //       return new GoodPizza(15,"Dobra");
         return new ExoticPizza(17,"Egzotyczna");
@@ -20,5 +20,5 @@ public class Config {
     @Bean(name ="another")
     public IOrder order(IPizza pizza){
         return new Order(pizza);
-    }
+    }*/
 }
