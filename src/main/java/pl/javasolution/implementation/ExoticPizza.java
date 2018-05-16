@@ -5,11 +5,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
+import pl.javasolution.api.GoodPizza;
 import pl.javasolution.api.IPizza;
 
 //@Primary
 @Component
 @Qualifier("egzotyczna")
+@GoodPizza
 public class ExoticPizza implements IPizza {
 
     private int price;

@@ -11,7 +11,7 @@ public class Order implements IOrder {
 
     private IPizza pizza;
 
-    public Order(@Qualifier("egzotyczna") IPizza pizza){
+    public Order(IPizza pizza){
         super();
         this.pizza=pizza;
     }

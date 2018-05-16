@@ -9,6 +9,7 @@ import pl.javasolution.api.IPizza;
 //@Primary
 @Component
 @Qualifier("dobra")
+@Primary
 public class GoodPizza implements IPizza {
 
     private int price;
