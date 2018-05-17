@@ -10,17 +10,19 @@ import pl.javasolution.api.IPizza;
 
 //@Primary
 @Component
-@Qualifier("egzotyczna")
-@GoodPizza
+//@GoodPizza
+
 public class ExoticPizza implements IPizza {
 
     private int price;
     private String name;
 
+    @Value("#{goodPizza.price matches '[1-9][1-9]'}")
+        boolean bool;
 
     public ExoticPizza(
-            @Value("17") int price,
-            @Value("Egzotyczna") String name)
+            @Value("#{T(java.lang.Math).random()*10}") int price,
+            @Value("#{goodPizza.getName()?.toUpperCase()}") String name)
     {
         super();
         this.price = price;
@@ -28,7 +30,13 @@ public class ExoticPizza implements IPizza {
     }
 
     public int getPrice() {
+
+        System.out.println(bool);
         return price;
+    }
+
+    public void setPrice(int price) {
+    this.price = price;
     }
 
     public String getName() {

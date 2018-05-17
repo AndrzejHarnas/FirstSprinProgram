@@ -1,6 +1,7 @@
 package pl.javasolution.implementation;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import pl.javasolution.api.IOrder;
@@ -11,8 +12,9 @@ public class Order implements IOrder {
 
     private IPizza pizza;
 
-    public Order(IPizza pizza){
+    public Order(@Value("#{goodPizza}") IPizza pizza){
         super();
+//        pizza.setPrice(10);
         this.pizza=pizza;
     }
 
